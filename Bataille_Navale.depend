@@ -45,21 +45,3 @@
 1606926715 d:\home\documents\ludus f2\algo\tp\bataille_navale\gameh.h
 	"InitVarH.h"
 
-1606923925 source:d:\home\documents\ludus f2\algo\tp\gitbataillenavale\bataille_navale\main.c
-	<stdio.h>
-	<stdlib.h>
-	"InitVarH.h"
-	"AffichageH.h"
-	"InitGameH.h"
-	"GameH.h"
-
-1606919951 d:\home\documents\ludus f2\algo\tp\gitbataillenavale\bataille_navale\initvarh.h
-
-1606919256 d:\home\documents\ludus f2\algo\tp\gitbataillenavale\bataille_navale\affichageh.h
-
-1606916765 d:\home\documents\ludus f2\algo\tp\gitbataillenavale\bataille_navale\initgameh.h
-	"InitVarH.h"
-
-1606926715 d:\home\documents\ludus f2\algo\tp\gitbataillenavale\bataille_navale\gameh.h
-	"InitVarH.h"
-

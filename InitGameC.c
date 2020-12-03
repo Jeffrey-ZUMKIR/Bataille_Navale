@@ -5,6 +5,9 @@
 #include "InitGameH.h"
 #include "AffichageH.h"
 
+//BUT:   Initialisation de la pose des bateaux
+//ENTREE:La map du joueur, le numéro du joueur et ses bateaux
+//SORTIE:La map initialisé avec les bateaux
 void InitGame(char plat[TAILLE][TAILLE],int joueur, bateau port){
     PoseBateau(plat,joueur,port.Porteavion);
     PoseBateau(plat,joueur,port.Cuirasse);
@@ -13,6 +16,9 @@ void InitGame(char plat[TAILLE][TAILLE],int joueur, bateau port){
     PoseBateau(plat,joueur,port.Torpilleur);
 }
 
+//BUT:   Poser un bateau
+//ENTREE:La map du joueur, le numéro du joueur, le bateau à placer
+//SORTIE:Le bateau placer
 void PoseBateau(char plat[TAILLE][TAILLE],int joueur, cara bt){
     char sens;
     int x=0;
@@ -20,6 +26,7 @@ void PoseBateau(char plat[TAILLE][TAILLE],int joueur, cara bt){
     char lettre;
     int good=0;
     printf("Joueur %d, veuillez placer votre %s.\n",joueur,bt.nom);
+    //Demander l'orientation du bateau
     do{
         fflush(stdin);
         printf("Voulez-vous le placer a la verticale(V) ou a l'horizontal(H)?\n");
@@ -30,8 +37,9 @@ void PoseBateau(char plat[TAILLE][TAILLE],int joueur, cara bt){
     }while(good==0);
     good=0;
     printf("Veuillez choisir les coordonnes pour l'avant du bateau.\n");
-    //Check emplacement s'il y a la place pour le bateau
+    //Check pose bateau
     do{
+        //Demande au joueur les coordonnées de la pointe du bateau
         printf("Nombre :");
         scanf("%d",&x);
         fflush(stdin);
@@ -40,8 +48,10 @@ void PoseBateau(char plat[TAILLE][TAILLE],int joueur, cara bt){
         fflush(stdin);
         y=translateCharInInt(lettre);
 
+        //On check si la position est libre
         if((x>0 && x<TAILLE)&&(y>0 && y<TAILLE)){
             good=1;
+            //En horizontal
             if(sens=='H'){
                 for(int i=0;i<bt.l;i++){
                     if((plat[y][x+i]!='o' || x+i>=TAILLE) && good==1){
@@ -58,6 +68,7 @@ void PoseBateau(char plat[TAILLE][TAILLE],int joueur, cara bt){
                     }
                 }
             }
+            //En vertical
             if(sens=='V'){
                 for(int i=0;i<bt.l;i++){
                     if((plat[y+i][x]!='o' || y+i>=TAILLE) && good==1){
@@ -79,6 +90,7 @@ void PoseBateau(char plat[TAILLE][TAILLE],int joueur, cara bt){
 
     }while(good==0);
     //Placer le bateau
+    //Horizontal
     if(sens=='H'){
         if(x-1>0){
             plat[y][x-1]='/';
@@ -96,6 +108,7 @@ void PoseBateau(char plat[TAILLE][TAILLE],int joueur, cara bt){
             plat[y][x+bt.l]='/';
         }
     }
+    //Vertical
     if(sens=='V'){
         if(y-1>0){
             plat[y-1][x]='/';
@@ -117,6 +130,9 @@ void PoseBateau(char plat[TAILLE][TAILLE],int joueur, cara bt){
     AfficheMap(plat);
 }
 
+//BUT:   Conversion de lettre en nombre
+//ENTREE:Une lettre
+//SORTIE:Un chiffre
 int translateCharInInt(char letter){
     int nb;
     letter=toupper(letter);

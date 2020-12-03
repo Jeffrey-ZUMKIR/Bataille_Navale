@@ -36,8 +36,6 @@ int main()
             printf("\n");
             AfficheGameMap(plat.tab_j2);
             Tir(&plat.tab_j2,&play2,&FinDuJeu);
-            //system("cls");
-            //AfficheGameMap(plat.tab_j2);
             system("pause");
         }
 
@@ -47,12 +45,10 @@ int main()
             printf("\n");
             AfficheGameMap(plat.tab_j1);
             Tir(&plat.tab_j1,&play1,&FinDuJeu);
-            //system("cls");
-            //AfficheGameMap(plat.tab_j1);
             system("pause");
         }
     }while(FinDuJeu==0);
-
+    //Check le joueur gagnant
     if(play1.nbC+play1.nbD+play1.nbP+play1.nbS+play1.nbT==0){
         printf("Joueur 2 gagne!");
     }else{

@@ -3,7 +3,9 @@
 #include <string.h>
 #include "InitVarH.h"
 
-
+//BUT:   Initialiser mes variables de types bateau
+//ENTREE:Variable de type bateau
+//SORTIE:Variables initialisés
 void InitBoat(bateau *port){
     port->Porteavion.l=5;
     port->Cuirasse.l=4;
@@ -24,6 +26,9 @@ void InitBoat(bateau *port){
     port->Torpilleur.init='t';
 }
 
+//BUT:   Initialisation des maps de départ
+//ENTREE:La map de départ
+//SORTIE:La map de départ initialisé
 void InitMap(char plat[TAILLE][TAILLE]){
     for(int i=0;i<TAILLE;i++){
         for(int j=0;j<TAILLE;j++){
@@ -40,6 +45,9 @@ void InitMap(char plat[TAILLE][TAILLE]){
     }
 }
 
+//BUT:   Initialisation des varaibles de type player
+//ENTREE:Variable de type player
+//SORTIE:Variable de type player initialisé
 void InitPlayer(player *p){
     p->nbP=5;
     p->nbC=4;
@@ -48,6 +56,9 @@ void InitPlayer(player *p){
     p->nbT=2;
 }
 
+//BUT:   Conversion de nombre en lettre
+//ENTREE:Un nombre
+//SORTIE:Une lettre
 char translateIntInChar(int i){
     char letter;
     switch(i){
@@ -100,7 +111,9 @@ char translateIntInChar(int i){
 
 
 
-
+//BUT:   Fixe de la map de départ
+//ENTREE:La map du joueur
+//SORTIE:La map du joueur sans les zones au accès interdit pour les bateaux
 void InitForGame(char plat[TAILLE][TAILLE]){
     for(int i=0;i<TAILLE;i++){
         for(int j=0;j<TAILLE;j++){

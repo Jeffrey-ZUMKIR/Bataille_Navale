@@ -3,6 +3,9 @@
 #include <string.h>
 #include "AffichageH.h"
 
+//BUT:   Afficher la map de départ lors de la préparation du jeu
+//ENTREE:La map du joueur
+//SORTIE:Affichage de la map
 void AfficheMap(char plat[TAILLE][TAILLE]){
     for(int i=0;i<TAILLE;i++){
         for(int j=0;j<TAILLE;j++){
@@ -19,6 +22,9 @@ void AfficheMap(char plat[TAILLE][TAILLE]){
     }
 }
 
+//BUT:   Afficher les maps des joueurs en cachant la position des bateaux
+//ENTREE:Map du joueur adverse
+//SORTIE:Affichage de la map
 void AfficheGameMap(char plat[TAILLE][TAILLE]){
     for(int i=0;i<TAILLE;i++){
         for(int j=0;j<TAILLE;j++){
